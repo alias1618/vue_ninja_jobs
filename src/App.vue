@@ -1,10 +1,21 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <div>
+    <router-link to="/">Home</router-link> |
+    <!-- <router-link to="/about">About</router-link> 和
+    <router-link :to="{ name: 'About'}">About_2</router-link>
+    兩種寫法功能相同
+    第二種寫法 更改連結時不需要更動其他地方
+    -->
+    <router-link to="/about">About</router-link> |
+    <router-link :to="{ name: 'About'}">About_2</router-link> |
+    <router-link :to="{ name: 'Jobs'}">Jobs</router-link>
+  </div>
   <router-view/>
   <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
