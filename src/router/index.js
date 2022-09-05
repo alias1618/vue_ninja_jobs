@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '/src/components/Home.vue'
+import Home from '/src/views/Home.vue'
 // import HelloWorld from '/src/components/HelloWorld.vue'
-import About from '/src/components/About.vue'
+import About from '/src/views/About.vue'
 import Jobs from '/src/views/jobs/Jobs.vue'
+import JobDetails from '/src/views/jobs/JobDetails.vue'
 
 let history = createWebHistory()
 let routes = [
@@ -25,6 +26,11 @@ let routes = [
     path: '/jobs',
     name: 'Jobs',
     component: Jobs
+  },
+  {
+    path: '/jobs/:id',
+    name: 'JobDetails',
+    component: JobDetails
   }
 ]
 
