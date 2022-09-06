@@ -4,6 +4,7 @@ import Home from '/src/views/Home.vue'
 import About from '/src/views/About.vue'
 import Jobs from '/src/views/jobs/Jobs.vue'
 import JobDetails from '/src/views/jobs/JobDetails.vue'
+import NotFound from '../views/jobs/NotFound.vue'
 
 let history = createWebHistory()
 let routes = [
@@ -30,7 +31,19 @@ let routes = [
   {
     path: '/jobs/:id',
     name: 'JobDetails',
-    component: JobDetails
+    component: JobDetails,
+    props:true
+  },
+  //redirect
+  {
+    path: '/all-jobs',
+    redirect: '/jobs'
+  },
+  //catahall 404
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component:NotFound
   }
 ]
 

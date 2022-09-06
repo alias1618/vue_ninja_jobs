@@ -16,6 +16,10 @@
     <router-link :to="{ name: 'About'}">About_2</router-link> |
     <router-link :to="{ name: 'Jobs'}">Jobs</router-link>
   </div>
+
+  <button @click="redirect">Redirect</button>
+  <button @click="back">Go back</button>
+  <button @click="forward">Go forward</button>
   <router-view/>
   <!-- <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -28,6 +32,22 @@
   <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
+<script>
+  export default {
+    methods: {
+      redirect() {
+        this.$router.push({ name: 'Home'})
+      },
+      back() {
+        this.$router.go(-1)
+      },
+      forward() {
+        this.$router.go(1)
+      }
+    },
+  }
+</script>
+
 <style scoped>
 .logo {
   height: 6em;
@@ -39,5 +59,11 @@
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+button {
+  margin:0 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
 }
 </style>
